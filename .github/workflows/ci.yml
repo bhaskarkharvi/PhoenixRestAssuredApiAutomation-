@@ -5,7 +5,8 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+  schedule: ## Run job at 6.30 PM for all 365 days. Current timing in UTC
+  - cron: "30 18 * * *"
 jobs:
   test:
 
