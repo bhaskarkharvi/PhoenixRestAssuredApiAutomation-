@@ -10,35 +10,29 @@ import org.testng.annotations.Test;
 
 //import static com.api.utils.ConfigManager.*;
 import static com.api.utils.ConfigManager14.*;
+
+import com.api.utils.SpecUtils;
 import com.phoenix.api.pojo.loginUserDetails;
 
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
-public class fdLoginAPITest {
+public class FdLoginAPITest {
 	//ConfigManager configManager= new ConfigManager();--> Dont create object. Directly access from static
-	loginUserDetails fdLoginDetails= new loginUserDetails("iamfd", "password");//Pojo- Model class
+	loginUserDetails loginDetails= new loginUserDetails("iamfd", "password");//Pojo- Model class
 	@Test
 	public void fdLoginAPITest() throws IOException {
 		given()
-		//.baseUri("http://64.227.160.186:9000/v1")
-		//.baseUri(configManager.getProprty("BASE_URI"))
-		.baseUri(getProprty("BASE_URI"))//---> Accessing  static method fromConfigManager class
-		.contentType(ContentType.JSON)
-		.accept(ContentType.JSON)
-		.body(fdLoginDetails)
-		
-		.log().uri()
-		.log().body()
-		.log().method()
+		.spec(SpecUtils.requestSpec(loginDetails))
+		//.body(loginDetails)
 		.when()
 		.post("login") 
-		.then()
-		.statusCode(200)
+		.then().spec(SpecUtils.responseSpec_OK(200))
 		.body("message", Matchers.equalToIgnoringCase("Success"))
-		.time(Matchers.lessThan(2000L))
+		.and()
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("responseSchema/fdLoginResponseSchema.json"))
-		.log().all();
+
+		;
 	}
 
 }
