@@ -39,13 +39,7 @@ public class CreateJobAPITest {
 	
 	@BeforeMethod(description = "Creating 'Create Job api' request Payload")
 	public void setup() {
-		System.out.println();
-		System.out.println("______________________________________________________");
-		
-		//System.out.println(Instant.now().minus(10,ChronoUnit.DAYS)); minus(lon) error
-		
-		System.out.println("______________________________________________________");
-		
+				
 		Customer customer = new Customer("B", "K", "9986998134", "", "bk@gmail.com", "");
 		CustomerAddress customerAddress= new CustomerAddress("774", "South road 774", "Tyne wear square774", "Blueline circle", "Bhtkl", "576390", "Contry", "AP");
 		CustomerProduct customerProduct = new CustomerProduct(DateTimeUtil.getTimeWithDaysAgo(10), "27624085806562", "27624085808532","27624085808532", 
@@ -54,16 +48,14 @@ public class CreateJobAPITest {
 		
 		Problems problems= new Problems(Problem.OVERHEATING.getCode(), "Overheating");
 		List<Problems> problemList=new ArrayList<Problems>();
-		//Problems[] problemArray= new Problems[1];
-		//problemArray[0]=problems;
 		problemList.add(problems);
 		
-		
-		 creatJobPayload= new CreateJobPayload(Servicelocation.SERVICE_LOCATION_A.getCode(), Platform.FRONTDESK.getCode(), Warranty_Status.IN_WARRANTY.getCode(), OEM.GOOGLE.getCode(), customer, customerAddress, customerProduct, problemList) ; 
+		creatJobPayload= new CreateJobPayload(Servicelocation.SERVICE_LOCATION_A.getCode(), Platform.FRONTDESK.getCode(), Warranty_Status.IN_WARRANTY.getCode(), OEM.GOOGLE.getCode(), customer, customerAddress, customerProduct, problemList) ; 
 		
 	}
 	
 	@Test(description ="To Verify create job able to create 'In warranty flow' successfully",groups={"api","regression","smoke"})
+	
 	public void CreateJobAPITest() {
 				
 		given()
