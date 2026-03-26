@@ -2,6 +2,7 @@ package com.phoenix.api.tests;
 
 import org.hamcrest.Matchers;
 import org.joda.time.Instant;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.api.utils.AuthTokenProvider;
@@ -34,10 +35,10 @@ import java.util.List;
 
 public class CreateJobAPITest {
 	
-	@Test
-	public void CreateJobAPITest() {
-		
-		
+	CreateJobPayload creatJobPayload;
+	
+	@BeforeMethod(description = "Creating 'Create Job api' request Payload")
+	public void setup() {
 		System.out.println();
 		System.out.println("______________________________________________________");
 		
@@ -58,8 +59,13 @@ public class CreateJobAPITest {
 		problemList.add(problems);
 		
 		
-		CreateJobPayload creatJobPayload= new CreateJobPayload(Servicelocation.SERVICE_LOCATION_A.getCode(), Platform.FRONTDESK.getCode(), Warranty_Status.IN_WARRANTY.getCode(), OEM.GOOGLE.getCode(), customer, customerAddress, customerProduct, problemList) ; 
+		 creatJobPayload= new CreateJobPayload(Servicelocation.SERVICE_LOCATION_A.getCode(), Platform.FRONTDESK.getCode(), Warranty_Status.IN_WARRANTY.getCode(), OEM.GOOGLE.getCode(), customer, customerAddress, customerProduct, problemList) ; 
 		
+	}
+	
+	@Test(description ="To Verify create job able to create 'In warranty flow' successfully",groups={"api","regression","smoke"})
+	public void CreateJobAPITest() {
+				
 		given()
 		.spec(SpecUtils.requestSpecWithHeader(Role.FD, creatJobPayload))
 		//.body(creatJobPayload)

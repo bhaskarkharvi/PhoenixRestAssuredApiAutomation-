@@ -15,7 +15,7 @@ import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class FDmasterAPItest {
-	@Test
+	@Test(description = "Verify FD master details API output", groups = {"api","regression","smoke"})
 	//RestAssured
 	public void fdMasterDetailsTest() {
 		
@@ -42,7 +42,7 @@ public class FDmasterAPItest {
 		.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("responseSchema/FDmasterResponseSchema.json"));
 		
 	}
-	
+	@Test(description = "Verify FD master details unathorized output", groups = {"api","regression","smoke"})
 	public void fdMasterAPItest401() {
 		given()
 		.spec(SpecUtils.requestSpecWithHeader(Role.FD))

@@ -16,7 +16,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 public class FDCountAPItest {
 	
 	//RestAssured
-	@Test
+	@Test(description = "Verify Count API success response", groups = {"api","regression","smoke"})
 	public void verifyCountAPIresponse_OK() {
 		
 					given()
@@ -39,7 +39,7 @@ public class FDCountAPItest {
 					.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("responseSchema/fdCountAPIResponse.json")));
 
 	}
-	@Test
+	@Test(description = "Verify Count API unathozrd access ", groups = {"api","regression","smoke"})
 	public void invalidAuthTokenTest_401() {
 		System.out.println("Invalid Auth Token test");
 		given()
