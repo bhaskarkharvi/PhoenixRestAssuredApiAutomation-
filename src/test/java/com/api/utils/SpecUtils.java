@@ -60,6 +60,21 @@ public class SpecUtils {
 		 			return requestSpecification;
 		
 	}
+	public static RequestSpecification requestSpecWithHeader(Role role , Object payload) {
+		RequestSpecification requestSpecification =  new RequestSpecBuilder()
+				 .setBaseUri(ConfigManager14.getProprty("BASE_URI"))
+				 .setContentType(JSON)
+				 .setAccept(JSON)
+				 .addHeader("Authorization", AuthTokenProvider.getToken(role))
+				 .setBody(payload)
+				 .log(LogDetail.URI)
+				 .log(LogDetail.HEADERS)
+				 .log(LogDetail.METHOD)
+				 .log(LogDetail.BODY)
+				 .build();
+		 			return requestSpecification;
+		
+	}
 	public static ResponseSpecification responseSpec_OK(int OKStatusCode) {
 	ResponseSpecification responseSpecification	= new ResponseSpecBuilder()
 		 .expectStatusCode(OKStatusCode)
