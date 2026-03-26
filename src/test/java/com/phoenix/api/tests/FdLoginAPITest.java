@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 //import static com.api.utils.ConfigManager.*;
@@ -18,9 +19,19 @@ import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class FdLoginAPITest {
+	
+	loginUserDetails loginDetails;
+	@BeforeMethod(description = "Login API Payload")
+	public void setUp() {
+		
+		 loginDetails= new loginUserDetails("iamfd", "password");
+	}
 	//ConfigManager configManager= new ConfigManager();--> Dont create object. Directly access from static
-	loginUserDetails loginDetails= new loginUserDetails("iamfd", "password");//Pojo- Model class
-	@Test
+	//loginUserDetails loginDetails= new loginUserDetails("iamfd", "password");//This is payload
+	//create a method setup()  and call before test
+	
+	
+	@Test(description = "Toverify FD user able to login",groups = {"api", "regression", "smoke"})
 	public void fdLoginAPITest() throws IOException {
 		given()
 		.spec(SpecUtils.requestSpec(loginDetails))

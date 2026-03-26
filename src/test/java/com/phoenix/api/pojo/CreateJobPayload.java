@@ -8,21 +8,21 @@ public class CreateJobPayload {
 	private int mst_warrenty_status_id=1;
 	private int mst_oem_id=2;
 	private Customer customer;
-	private CustomerAddress customerAddress;
-	private CustomerProduct customerProduct;
-	private Problems problem[];
+	private CustomerAddress customer_address;
+	private CustomerProduct customer_product;
+	private Problems problems[];
 	public CreateJobPayload(int mst_service_location_id, int mst_platform_id, int mst_warrenty_status_id,
-			int mst_oem_id, Customer customer, CustomerAddress customerAddress, CustomerProduct customerProduct,
-			Problems[] problem) {
+			int mst_oem_id, Customer customer, CustomerAddress customer_address, CustomerProduct customer_product,
+			Problems[] problems) {
 		super();
 		this.mst_service_location_id = mst_service_location_id;
 		this.mst_platform_id = mst_platform_id;
 		this.mst_warrenty_status_id = mst_warrenty_status_id;
 		this.mst_oem_id = mst_oem_id;
 		this.customer = customer;
-		this.customerAddress = customerAddress;
-		this.customerProduct = customerProduct;
-		this.problem = problem;
+		this.customer_address = customer_address;
+		this.customer_product = customer_product;
+		this.problems = problems;
 	}
 	public int getMst_service_location_id() {
 		return mst_service_location_id;
@@ -54,30 +54,30 @@ public class CreateJobPayload {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public CustomerAddress getCustomerAddress() {
-		return customerAddress;
+	public CustomerAddress getCustomer_address() {
+		return customer_address;
 	}
-	public void setCustomerAddress(CustomerAddress customerAddress) {
-		this.customerAddress = customerAddress;
+	public void setCustomer_address(CustomerAddress customer_address) {
+		this.customer_address = customer_address;
 	}
-	public CustomerProduct getCustomerProduct() {
-		return customerProduct;
+	public CustomerProduct getCustomer_product() {
+		return customer_product;
 	}
-	public void setCustomerProduct(CustomerProduct customerProduct) {
-		this.customerProduct = customerProduct;
+	public void setCustomer_product(CustomerProduct customer_product) {
+		this.customer_product = customer_product;
 	}
-	public Problems[] getProblem() {
-		return problem;
+	public Problems[] getProblems() {
+		return problems;
 	}
-	public void setProblem(Problems[] problem) {
-		this.problem = problem;
+	public void setProblems(Problems[] problems) {
+		this.problems = problems;
 	}
 	@Override
 	public String toString() {
 		return "CreateJobPayload [mst_service_location_id=" + mst_service_location_id + ", mst_platform_id="
 				+ mst_platform_id + ", mst_warrenty_status_id=" + mst_warrenty_status_id + ", mst_oem_id=" + mst_oem_id
-				+ ", customer=" + customer + ", customerAddress=" + customerAddress + ", customerProduct="
-				+ customerProduct + ", problem=" + Arrays.toString(problem) + "]";
+				+ ", customer=" + customer + ", customer_address=" + customer_address + ", customer_product="
+				+ customer_product + ", problems=" + Arrays.toString(problems) + "]";
 	}
-
+	
 }
