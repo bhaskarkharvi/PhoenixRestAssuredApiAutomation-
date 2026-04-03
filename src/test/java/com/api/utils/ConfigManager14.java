@@ -22,8 +22,10 @@ public class ConfigManager14 {
 	static {
 		env= System.getProperty("env","qa");
 		  //env= System.getProperty("env" , "qa");//default set to qa even if no env mentioned in run command mvn test
-		 env= env.toLowerCase().trim();// if " qa " - trims extra space.
-		  switch(env){
+		
+		env= env.toLowerCase().trim();// if " qa " - trims extra space.
+		  
+		switch(env){
 		  case "dev" -> path="properties/config.dev.properties";
 		  case "qa"-> path="properties/config.qa.properties";
 		  case "uat"->path="properties/config.uat.properties";

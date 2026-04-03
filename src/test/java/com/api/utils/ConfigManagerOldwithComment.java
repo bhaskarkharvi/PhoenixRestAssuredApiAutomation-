@@ -12,7 +12,7 @@ import javax.management.RuntimeErrorException;
 public class ConfigManagerOldwithComment {
 	
 	private static Properties prop= new Properties();
-	public static String path="properties/config.properties";
+	public static String path;//="properties/config.properties";
 	
 	public static String env;
 	
@@ -21,7 +21,7 @@ public class ConfigManagerOldwithComment {
 		 //Make it platform independent
 		//File configFilepath= new File(System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"properties"+File.separator+"config.properties");
 		 
-		//avoid big path in file like below frominput stream
+		//avoid big path in file like below from input stream
 		 InputStream input= Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
 		//FileReader fileRead;
 		// if(path==null) {

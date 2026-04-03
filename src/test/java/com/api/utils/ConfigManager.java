@@ -12,7 +12,7 @@ import javax.management.RuntimeErrorException;
 public class ConfigManager {
 	
 	private static Properties prop= new Properties();
-	public static String path="properties/config.properties";
+	public static String path;//="properties/config.properties";
 	private ConfigManager() {
 		//Private constructor to prevent creating object of this class
 	}
