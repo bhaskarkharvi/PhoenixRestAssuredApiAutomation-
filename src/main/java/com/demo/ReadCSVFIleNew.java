@@ -7,7 +7,7 @@ import java.util.List;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
-public class ReadCSVFIle {
+public class ReadCSVFIleNew {
 
 	public static void main(String[] args) throws IOException, CsvException {
 		
