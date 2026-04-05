@@ -1,4 +1,4 @@
-package Constants;
+package com.Constants;
 
 public enum OEM {
 GOOGLE(1), APPLE(2);

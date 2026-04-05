@@ -1,33 +1,24 @@
 package com.phoenix.api.tests.datadriven;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
-import java.io.IOException;
-
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-//import static com.api.utils.ConfigManager.*;
-import static com.api.utils.ConfigManager14.*;
 
 import com.api.utils.SpecUtils;
 import com.dataproviders.api.bean.UserPOJO;
-import com.phoenix.api.pojo.loginUserDetails;
 
-import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
-public class FdLoginAPIDataDrivenTest {
+public class LoginAPIDataDrivenTest {
 	
 
 	@Test(description = "Toverify FD user able to login",groups = {"api", "regression", "datadriven"}
 			,dataProviderClass=com.dataproviders.DataProviderUtils.class,
-			dataProvider="loginAPIDataProvider")//loginAPIDataProvider is method in DataProviderUtils.class
+			dataProvider="LoginAPIDataProvider")//loginAPIDataProvider is method in DataProviderUtils.class
 	public void fdLoginAPITest(UserPOJO userPOJO) {
 		given()
-		.spec(SpecUtils.requestSpec(userPOJO))
+		.spec(SpecUtils.requestSpec(userPOJO))//usernae and password -ConfigManager14 class
 		//.body(loginDetails)
 		.when()
 		.post("login") 

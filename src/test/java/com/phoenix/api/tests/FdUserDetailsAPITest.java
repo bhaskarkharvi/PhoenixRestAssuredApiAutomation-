@@ -1,24 +1,14 @@
 package com.phoenix.api.tests;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
 
-import java.io.IOException;
-
-import static org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
 
-import static com.api.utils.AuthTokenProvider.*;
-
-import com.api.utils.ConfigManager;
+import com.Constants.Role;
 import com.api.utils.SpecUtils;
-import com.phoenix.api.pojo.loginUserDetails;
 
-import Constants.Role;
-import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import io.restassured.module.jsv.JsonSchemaValidator;
-//import static com.api.utils.ConfigManager.*; -- Java 14 arrow fn is introduced
-import static com.api.utils.ConfigManager14.*;
 
 public class FdUserDetailsAPITest {
 	

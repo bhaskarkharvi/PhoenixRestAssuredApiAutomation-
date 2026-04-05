@@ -1,21 +1,16 @@
 package com.phoenix.api.tests;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
 import java.io.IOException;
 
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-//import static com.api.utils.ConfigManager.*;
-import static com.api.utils.ConfigManager14.*;
-
 import com.api.utils.SpecUtils;
 import com.phoenix.api.pojo.loginUserDetails;
 
-import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class FdLoginAPITest {

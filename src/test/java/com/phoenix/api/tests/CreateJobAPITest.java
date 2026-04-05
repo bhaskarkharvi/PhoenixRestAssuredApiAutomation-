@@ -1,12 +1,24 @@
 package com.phoenix.api.tests;
 
+import static io.restassured.RestAssured.given;
+
+//import java.time.Instant;
+//import java.time.temporal.ChronoUnit;  
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hamcrest.Matchers;
-import org.joda.time.Instant;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.api.utils.AuthTokenProvider;
-import com.api.utils.ConfigManager14;
+import com.Constants.Model;
+import com.Constants.OEM;
+import com.Constants.Platform;
+import com.Constants.Problem;
+import com.Constants.Product;
+import com.Constants.Role;
+import com.Constants.Servicelocation;
+import com.Constants.Warranty_Status;
 import com.api.utils.DateTimeUtil;
 import com.api.utils.SpecUtils;
 import com.phoenix.api.refactoring.records.CreateJobPayload;
@@ -15,23 +27,7 @@ import com.phoenix.api.refactoring.records.CustomerAddress;
 import com.phoenix.api.refactoring.records.CustomerProduct;
 import com.phoenix.api.refactoring.records.Problems;
 
-import Constants.Model;
-import Constants.OEM;
-import Constants.Platform;
-import Constants.Problem;
-import Constants.Product;
-import Constants.Role;
-import Constants.Servicelocation;
-import Constants.Warranty_Status;
-import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
-
-import static io.restassured.RestAssured.*;
-
-//import java.time.Instant;
-//import java.time.temporal.ChronoUnit;  
-import java.util.ArrayList;
-import java.util.List;
 
 public class CreateJobAPITest {
 	

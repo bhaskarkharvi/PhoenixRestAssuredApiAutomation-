@@ -1,4 +1,4 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Phoenix API Automation Suite" verbose="1">
 
@@ -6,9 +6,12 @@
 		<classes>
 			<class name="com.phoenix.api.tests.FdLoginAPITest" />
 			<class name="com.phoenix.api.tests.FdUserDetailsAPITest" />
-			<class name="com.phoenix.api.tests.FDCountAPItest" />
 			<class name="com.phoenix.api.tests.FDmasterAPItest" />
-
+			<class name="com.phoenix.api.tests.FDCountAPItest" />
+			<class name="com.phoenix.api.tests.CreateJobAPITest" />
+			<class
+				name="com.phoenix.api.tests.datadriven.FdLoginAPIDataDrivenTest" />
 		</classes>
 	</test>
+
 </suite>

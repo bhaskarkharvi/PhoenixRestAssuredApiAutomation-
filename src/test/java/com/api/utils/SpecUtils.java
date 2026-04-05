@@ -1,19 +1,16 @@
 package com.api.utils;
 
-import org.apache.http.entity.ContentType;
+import static io.restassured.http.ContentType.JSON;
+
 import org.hamcrest.Matchers;
 
-import com.phoenix.api.pojo.loginUserDetails;
+import com.Constants.Role;
 
-import Constants.Role;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import io.restassured.internal.ResponseSpecificationImpl;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-
-import  static io.restassured.http.ContentType.*;
 
 public class SpecUtils {
 	 

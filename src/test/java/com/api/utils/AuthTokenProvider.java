@@ -1,13 +1,11 @@
 package com.api.utils;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
 
-import static org.hamcrest.Matchers.*;
-
+import com.Constants.Role;
 import com.phoenix.api.pojo.loginUserDetails;
 
-import Constants.Role;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 public class AuthTokenProvider {

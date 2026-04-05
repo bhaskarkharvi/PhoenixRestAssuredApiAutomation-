@@ -22,20 +22,20 @@ public class UserPOJO {
 	
 	}
 	public String getUsername() {
-		return y;
-	}
-	public void setUsername(String username) {
-		this.y = username;
-	}
-	public String getPassword() {
 		return x;
 	}
+	public void setUsername(String username) {
+		this.x = username;
+	}
+	public String getPassword() {
+		return y;
+	}
 	public void setPassword(String password) {
-		this.x = password;
+		this.y = password;
 	}
 	@Override
 	public String toString() {
-		return "UserPOJO [username=" + y + ", password=" + x + "]";
+		return "UserPOJO [username=" + x + ", password=" + y + "]";
 	}
 	
 }

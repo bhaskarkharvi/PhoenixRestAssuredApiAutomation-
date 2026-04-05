@@ -1,4 +1,4 @@
-package Constants;
+package com.Constants;
 
 public enum Servicelocation {
 	SERVICE_LOCATION_A(1),

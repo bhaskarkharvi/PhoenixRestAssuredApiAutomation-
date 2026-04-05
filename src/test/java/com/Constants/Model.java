@@ -1,4 +1,4 @@
-package Constants;
+package com.Constants;
 
 public enum Model {
 	NEXUS_2_BLUE(1),GALLEXY(2);
