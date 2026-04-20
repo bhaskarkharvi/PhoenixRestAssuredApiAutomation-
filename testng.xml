@@ -9,7 +9,8 @@
 			<class name="com.phoenix.api.tests.FDmasterAPItest" />
 			<class name="com.phoenix.api.tests.FDCountAPItest" />
 			<class name="com.phoenix.api.tests.CreateJobAPITest" />
-			<class name="com.phoenix.api.tests.datadriven.FdLoginAPIDataDrivenTest" />
+			<class name="com.phoenix.api.tests.datadriven.LoginAPIDataDrivenTest" />
+			<class name="com.phoenix.api.tests.datadriven.CreateJobAPIDataDrivenTest" />
 		</classes>
 	</test>
 
