@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalToIgnoringCase;
 
 import com.Constants.Role;
-import com.phoenix.api.pojo.loginUserDetails;
+import com.api.request.model.loginUserDetails;
 
 import io.restassured.http.ContentType;
 

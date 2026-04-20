@@ -1,6 +1,11 @@
-package com.phoenix.api.pojo;
+package com.api.request.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+
+import com.api.request.model.CustomerAddress;
+import com.api.request.model.CustomerProduct;
+import com.api.request.model.Problems;
 
 public class CreateJobPayload {
 	private int mst_service_location_id=0;
@@ -10,10 +15,11 @@ public class CreateJobPayload {
 	private Customer customer;
 	private CustomerAddress customer_address;
 	private CustomerProduct customer_product;
-	private Problems problems[];
+	private ArrayList<Problems> problems;
 	public CreateJobPayload(int mst_service_location_id, int mst_platform_id, int mst_warrenty_status_id,
 			int mst_oem_id, Customer customer, CustomerAddress customer_address, CustomerProduct customer_product,
-			Problems[] problems) {
+			ArrayList<Problems> problems) {
+				
 		super();
 		this.mst_service_location_id = mst_service_location_id;
 		this.mst_platform_id = mst_platform_id;
@@ -24,6 +30,7 @@ public class CreateJobPayload {
 		this.customer_product = customer_product;
 		this.problems = problems;
 	}
+
 	public int getMst_service_location_id() {
 		return mst_service_location_id;
 	}
@@ -66,10 +73,10 @@ public class CreateJobPayload {
 	public void setCustomer_product(CustomerProduct customer_product) {
 		this.customer_product = customer_product;
 	}
-	public Problems[] getProblems() {
+	public ArrayList<Problems> getProblems() {
 		return problems;
 	}
-	public void setProblems(Problems[] problems) {
+	public void setProblems(ArrayList<Problems> problems) {
 		this.problems = problems;
 	}
 	@Override
@@ -77,7 +84,7 @@ public class CreateJobPayload {
 		return "CreateJobPayload [mst_service_location_id=" + mst_service_location_id + ", mst_platform_id="
 				+ mst_platform_id + ", mst_warrenty_status_id=" + mst_warrenty_status_id + ", mst_oem_id=" + mst_oem_id
 				+ ", customer=" + customer + ", customer_address=" + customer_address + ", customer_product="
-				+ customer_product + ", problems=" + Arrays.toString(problems) + "]";
+				+ customer_product + ", problems=" + problems + "]";
 	}
 	
 }

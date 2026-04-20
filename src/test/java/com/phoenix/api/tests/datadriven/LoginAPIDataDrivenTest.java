@@ -6,7 +6,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import com.api.utils.SpecUtils;
-import com.dataproviders.api.bean.UserPOJO;
+import com.dataproviders.api.bean.UserBean;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 
@@ -16,7 +16,7 @@ public class LoginAPIDataDrivenTest {
 	@Test(description = "Toverify FD user able to login",groups = {"api", "regression", "datadriven"}
 			,dataProviderClass=com.dataproviders.DataProviderUtils.class,
 			dataProvider="LoginAPIDataProvider")//loginAPIDataProvider is method in DataProviderUtils.class
-	public void fdLoginAPITest(UserPOJO userPOJO) {
+	public void fdLoginAPITest(UserBean userPOJO) {
 		given()
 		.spec(SpecUtils.requestSpec(userPOJO))//usernae and password -ConfigManager14 class
 		//.body(loginDetails)

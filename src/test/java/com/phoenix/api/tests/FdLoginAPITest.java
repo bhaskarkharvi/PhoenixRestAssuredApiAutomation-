@@ -8,8 +8,8 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.api.request.model.loginUserDetails;
 import com.api.utils.SpecUtils;
-import com.phoenix.api.pojo.loginUserDetails;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 

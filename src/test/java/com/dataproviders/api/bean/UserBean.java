@@ -2,7 +2,7 @@ package com.dataproviders.api.bean;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class UserPOJO {
+public class UserBean {
 	//private String username;
 	//private String password;
 	
@@ -13,10 +13,10 @@ public class UserPOJO {
 	private String y;
 	
 	
-	public UserPOJO() {
+	public UserBean() {
 		
 	}
-	public UserPOJO(String username , String password) {
+	public UserBean(String username , String password) {
 		this.x=username;
 		this.y=password;
 	

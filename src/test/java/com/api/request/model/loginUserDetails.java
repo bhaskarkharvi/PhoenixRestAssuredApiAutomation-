@@ -1,4 +1,4 @@
-package com.phoenix.api.pojo;
+package com.api.request.model;
 
 public class loginUserDetails {
 	
