@@ -32,6 +32,8 @@ public class FakeDataGenerator {
 	private final static  int MST_MODEL_ID=1;
 	//private final static int PROBLEM_ID = random.nextInt(27)+1;
 	
+	private final static int validProblemId[]= {1,2,3,4,5,6,7,8,9,10,11,12,15,16,17,19,20,22,24,26,27,28,29};
+	
 	public static CreateJobPayload generateFakeCreateJobData() {
 		
 		Customer customer=generateFakeCustomerData();
@@ -112,16 +114,24 @@ public class FakeDataGenerator {
 		
 	}
 		
+	
 		private static List<Problems> generateFakeProblemListData() {
 			
-			int PROBLEM_ID = RANDOM.nextInt(27)+1;
-			String fakeRemark= faker.lorem().sentence(4);
-			Problems problems = new Problems(PROBLEM_ID, fakeRemark);
-			
+			Problems problems;//Object/variable must be out side of for loop
+			int problemIndex;
+			String fakeRemark;
 			List<Problems> problemList = new ArrayList<Problems>();
-			problemList.add(problems);
-			System.out.println(problems);
+			int count = RANDOM.nextInt(2)+1;//Max 3 problesm can be added so, 0-3  can be as  2+1
+			
+			for(int i=1;i<=3;i++) {//Generating problem ID and adding it to list.
+				
+			 problemIndex = RANDOM.nextInt(validProblemId.length);
+			 fakeRemark= faker.lorem().sentence(4);
+			 problems = new Problems(validProblemId[problemIndex], fakeRemark);
+			 problemList.add(problems);
+			}
 			return problemList;
+		
 		}
 
 	
