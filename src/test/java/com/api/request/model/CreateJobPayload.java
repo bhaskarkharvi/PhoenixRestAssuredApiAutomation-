@@ -2,6 +2,7 @@ package com.api.request.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.api.request.model.CustomerAddress;
 import com.api.request.model.CustomerProduct;
@@ -15,10 +16,10 @@ public class CreateJobPayload {
 	private Customer customer;
 	private CustomerAddress customer_address;
 	private CustomerProduct customer_product;
-	private ArrayList<Problems> problems;
+	private List<Problems> problems;
 	public CreateJobPayload(int mst_service_location_id, int mst_platform_id, int mst_warrenty_status_id,
 			int mst_oem_id, Customer customer, CustomerAddress customer_address, CustomerProduct customer_product,
-			ArrayList<Problems> problems) {
+			List<Problems> problems) {
 				
 		super();
 		this.mst_service_location_id = mst_service_location_id;
@@ -73,7 +74,7 @@ public class CreateJobPayload {
 	public void setCustomer_product(CustomerProduct customer_product) {
 		this.customer_product = customer_product;
 	}
-	public ArrayList<Problems> getProblems() {
+	public List<Problems> getProblems() {
 		return problems;
 	}
 	public void setProblems(ArrayList<Problems> problems) {
