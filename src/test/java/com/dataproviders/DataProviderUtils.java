@@ -43,7 +43,12 @@ public class DataProviderUtils {
 	
 	@DataProvider(name="CreateJobAPIFakerDataProvider", parallel = true)
 	public static Iterator<CreateJobPayload> createJobAPIFakerDataProvider() {
-		Iterator<CreateJobPayload> createJobPayloadIterator= FakeDataGenerator.generateFakeCreateJobData(2);
+		//Introduce git bash terminal entry for data(number of payload) count -> to remove hardcoding of count
+		String fakerCount= System.getProperty("fakerCount", "5");
+		int fakerCountInt=Integer.parseInt(fakerCount);
+		Iterator<CreateJobPayload> createJobPayloadIterator= FakeDataGenerator.generateFakeCreateJobData(fakerCountInt);
+
+		//Iterator<CreateJobPayload> createJobPayloadIterator= FakeDataGenerator.generateFakeCreateJobData(2);
 		return createJobPayloadIterator;
 	}
 

@@ -1,4 +1,4 @@
-package com.phoenix.api.tests;
+package com.phoenix.api.tests.datadriven;
 
 import static io.restassured.RestAssured.given;
 
@@ -39,16 +39,9 @@ public class CreateJobAPIFakeDataDrivenTest {
 	//private CreateJobPayload createJobPayload;
 	private final static  String COUNTRY ="India";
 
-	/*
-	 * @BeforeMethod(description =
-	 * "Creating 'Create Job api' request Payload with faker data class") public
-	 * void setup() {
-	 * 
-	 * 
-	 * FakeDataGenrator createJobFakeDataPayload =
-	 * FakeDataGenerator.generateFakeCreateJobData(); }
-	 */
-	@Test(description ="To Verify create job able to create 'In warranty flow' successfully with fake data",groups={"api","regression","smoke"},
+	
+	@Test(description ="To Verify create job able to create 'In warranty flow' successfully with fake data"
+			,groups={"api","csv","faker"},
 			dataProviderClass = com.dataproviders.DataProviderUtils.class,
 			dataProvider="CreateJobAPIFakerDataProvider" //passed faker data provider for create Job fromFakeDataGenerator class
 			)
