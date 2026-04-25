@@ -9,6 +9,7 @@ import com.api.request.model.CustomerProduct;
 import com.api.request.model.Problems;
 
 public class CreateJobPayload {
+	
 	private int mst_service_location_id=0;
 	private int mst_platform_id =2;
 	private int mst_warrenty_status_id=1;
@@ -17,6 +18,8 @@ public class CreateJobPayload {
 	private CustomerAddress customer_address;
 	private CustomerProduct customer_product;
 	private List<Problems> problems;
+	
+	CreateJobPayload(){}
 	public CreateJobPayload(int mst_service_location_id, int mst_platform_id, int mst_warrenty_status_id,
 			int mst_oem_id, Customer customer, CustomerAddress customer_address, CustomerProduct customer_product,
 			List<Problems> problems) {
