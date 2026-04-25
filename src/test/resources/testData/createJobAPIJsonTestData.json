@@ -1,0 +1,124 @@
+[{
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 2,
+    "customer": {
+        "first_name": "bhaskar",
+        "last_name": "k",
+        "mobile_number": "9988778899",
+        "mobile_number_alt": "",
+        "email_id": "bhaksa66@gmail.com",
+        "email_id_alt": ""
+    },
+    "customer_address": {
+        "flat_number": "123",
+        "apartment_name": "Twin Tower",
+        "street_name": "Shyne Square",
+        "landmark": "Hot Chips",
+        "area": "Assylum",
+        "pincode": "564534",
+        "country": "India",
+        "state": "Assam"
+    },
+    "customer_product": {
+        "dop": "2025-08-19T18:30:00.000Z",
+        "serial_number": "889977665544332",
+        "imei1": "889977665544332",
+        "imei2": "889977665544332",
+        "popurl": "2025-08-19T18:30:00.000Z",
+        "product_id": 3,
+        "mst_model_id": 3
+    },
+    "problems": [
+        {
+            "id": 3,
+            "remark": "Screen Isuue"
+        },
+		{
+		            "id": 2,
+		            "remark": "Motherboard Isuue"
+		        }
+    ]
+},
+
+{
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 2,
+    "customer": {
+        "first_name": "bhaskar",
+        "last_name": "k",
+        "mobile_number": "9988778899",
+        "mobile_number_alt": "",
+        "email_id": "bhaksa66@gmail.com",
+        "email_id_alt": ""
+    },
+    "customer_address": {
+        "flat_number": "123",
+        "apartment_name": "Twin Tower",
+        "street_name": "Shyne Square",
+        "landmark": "Hot Chips",
+        "area": "Assylum",
+        "pincode": "564534",
+        "country": "India",
+        "state": "Assam"
+    },
+    "customer_product": {
+        "dop": "2025-08-19T18:30:00.000Z",
+        "serial_number": "889977665544338",
+        "imei1": "889977665544338",
+        "imei2": "889977665544338",
+        "popurl": "2025-08-19T18:30:00.000Z",
+        "product_id": 3,
+        "mst_model_id": 3
+    },
+    "problems": [
+        {
+            "id": 1,
+            "remark": "Batery issue"
+        }
+    ]
+},
+{
+    "mst_service_location_id": 0,
+    "mst_platform_id": 2,
+    "mst_warrenty_status_id": 1,
+    "mst_oem_id": 2,
+    "customer": {
+        "first_name": "bhaskar",
+        "last_name": "k",
+        "mobile_number": "9988778899",
+        "mobile_number_alt": "",
+        "email_id": "bhaksa66@gmail.com",
+        "email_id_alt": ""
+    },
+    "customer_address": {
+        "flat_number": "123",
+        "apartment_name": "Twin Tower",
+        "street_name": "Shyne Square",
+        "landmark": "Hot Chips",
+        "area": "Assylum",
+        "pincode": "564534",
+        "country": "India",
+        "state": "Assam"
+    },
+    "customer_product": {
+        "dop": "2025-08-19T18:30:00.000Z",
+        "serial_number": "889977665544331",
+        "imei1": "889977665544331",
+        "imei2": "889977665544331",
+        "popurl": "2025-08-19T18:30:00.000Z",
+        "product_id": 3,
+        "mst_model_id": 3
+    },
+    "problems": [
+        {
+            "id": 4,
+            "remark": "Synch issue becoz of batery"
+        }
+    ]
+}
+	
+]

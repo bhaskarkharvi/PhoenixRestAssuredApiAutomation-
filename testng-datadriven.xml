@@ -8,6 +8,7 @@
 			<class name="com.phoenix.api.tests.datadriven.CreateJobAPIDataDrivenTest" />
 			<class name="com.phoenix.api.tests.datadriven.CreateJobAPIFakeDataDrivenTest" />
 			<class name="com.phoenix.api.tests.datadriven.LoginAPIJSONDataDrivenTest" />
+			<class name="com.phoenix.api.tests.datadriven.CreateJobAPIJsonDataDrivenTest" />
 		</classes>
 	</test>
 

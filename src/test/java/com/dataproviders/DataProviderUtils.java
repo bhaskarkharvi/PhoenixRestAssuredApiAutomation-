@@ -58,5 +58,12 @@ public class DataProviderUtils {
 	public static Iterator<loginUserDetails> loginAPIJSONDataProvider() {
 		//return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
 		return JsonReaderUtil.loadJSON("testData/loginAPITestData.json", loginUserDetails[].class);
+	}
+		
+		@DataProvider(name = "createJobAPIJSONDataProvider", parallel = true)
+		public static Iterator<CreateJobPayload> createJobAPIJSONDataProvider() {
+			//return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
+			return JsonReaderUtil.loadJSON("testData/createJobAPIJsonTestData.json", CreateJobPayload[].class);
 
-}}
+}
+		}
