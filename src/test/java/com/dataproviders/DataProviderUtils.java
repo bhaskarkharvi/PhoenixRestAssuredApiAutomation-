@@ -10,6 +10,7 @@ import com.api.request.model.CreateJobPayload;
 import com.api.request.model.loginUserDetails;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
+import com.api.utils.ExcelReaderUtil;
 import com.api.utils.FakeDataGenerator;
 import com.api.utils.JsonReaderUtil;
 import com.dataproviders.api.bean.CreateJobBean;
@@ -41,29 +42,37 @@ public class DataProviderUtils {
 		return createJobPayload.iterator();
 
 	}
-	
-	
-	@DataProvider(name="CreateJobAPIFakerDataProvider", parallel = true)
-	public static Iterator<CreateJobPayload> createJobAPIFakerDataProvider() {
-		//Introduce git bash terminal entry for data(number of payload) count -> to remove hardcoding of count
-		String fakerCount= System.getProperty("fakerCount", "5");
-		int fakerCountInt=Integer.parseInt(fakerCount);
-		Iterator<CreateJobPayload> createJobPayloadIterator= FakeDataGenerator.generateFakeCreateJobData(fakerCountInt);
 
-		//Iterator<CreateJobPayload> createJobPayloadIterator= FakeDataGenerator.generateFakeCreateJobData(2);
+	@DataProvider(name = "CreateJobAPIFakerDataProvider", parallel = true)
+	public static Iterator<CreateJobPayload> createJobAPIFakerDataProvider() {
+		// Introduce git bash terminal entry for data(number of payload) count -> to
+		// remove hardcoding of count
+		String fakerCount = System.getProperty("fakerCount", "5");
+		int fakerCountInt = Integer.parseInt(fakerCount);
+		Iterator<CreateJobPayload> createJobPayloadIterator = FakeDataGenerator
+				.generateFakeCreateJobData(fakerCountInt);
+
+		// Iterator<CreateJobPayload> createJobPayloadIterator=
+		// FakeDataGenerator.generateFakeCreateJobData(2);
 		return createJobPayloadIterator;
 	}
-	
+
 	@DataProvider(name = "loginAPIJSONDataProvider", parallel = true)
 	public static Iterator<loginUserDetails> loginAPIJSONDataProvider() {
-		//return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
+		// return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
 		return JsonReaderUtil.loadJSON("testData/loginAPITestData.json", loginUserDetails[].class);
 	}
-		
-		@DataProvider(name = "createJobAPIJSONDataProvider", parallel = true)
-		public static Iterator<CreateJobPayload> createJobAPIJSONDataProvider() {
-			//return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
-			return JsonReaderUtil.loadJSON("testData/createJobAPIJsonTestData.json", CreateJobPayload[].class);
 
+	@DataProvider(name = "createJobAPIJSONDataProvider", parallel = true)
+	public static Iterator<CreateJobPayload> createJobAPIJSONDataProvider() {
+		// return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
+		return JsonReaderUtil.loadJSON("testData/createJobAPIJsonTestData.json", CreateJobPayload[].class);
+
+	}
+	@DataProvider(name = "loginAPIExcelDataProvider", parallel = true)
+	public static Iterator<loginUserDetails> loginAPIExcelDataProvider() {
+		// return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
+		return ExcelReaderUtil.loadExcelData();
+
+	}
 }
-		}
