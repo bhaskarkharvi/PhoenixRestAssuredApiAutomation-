@@ -11,6 +11,7 @@ import com.api.request.model.loginUserDetails;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
 import com.api.utils.ExcelReaderUtil;
+import com.api.utils.ExcelReaderUtilPoiji;
 import com.api.utils.FakeDataGenerator;
 import com.api.utils.JsonReaderUtil;
 import com.dataproviders.api.bean.CreateJobBean;
@@ -73,6 +74,12 @@ public class DataProviderUtils {
 	public static Iterator<loginUserDetails> loginAPIExcelDataProvider() {
 		// return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
 		return ExcelReaderUtil.loadExcelData();
+
+	}
+	@DataProvider(name = "loginAPIExcelPoijiDataProvider", parallel = true)
+	public static Iterator<UserBean> loginAPIExcelPoijiDataProvider() {
+		// return CSVReaderUtil.loadCSV("testData/loginCreds.csv", UserBean.class);
+		return ExcelReaderUtilPoiji.loadExcelPoijiData();
 
 	}
 }

@@ -24,7 +24,6 @@ private ExcelReaderUtil() {}
 		try {
 			myWorkBook = new XSSFWorkbook(is);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		XSSFSheet mySheet = myWorkBook.getSheet("LoginTestData");
@@ -43,11 +42,8 @@ private ExcelReaderUtil() {}
 			}
 			if (cell.getStringCellValue().trim().equalsIgnoreCase("username")) {
 				userNameIndex = cell.getColumnIndex();
-			}
-			
-			//System.out.println(userNameIndex + passwordIndex);
+			}//System.out.println(userNameIndex + passwordIndex);
 		}
-		
 		System.out.println(userNameIndex + passwordIndex);
 		
 		int lastRowIndex = mySheet.getLastRowNum();
@@ -59,7 +55,6 @@ private ExcelReaderUtil() {}
 			userCredential = new loginUserDetails(rowData.getCell(userNameIndex).toString(),
 					rowData.getCell(passwordIndex).toString());
 			userList.add(userCredential);
-
 		}
 		return userList.iterator();
 	}

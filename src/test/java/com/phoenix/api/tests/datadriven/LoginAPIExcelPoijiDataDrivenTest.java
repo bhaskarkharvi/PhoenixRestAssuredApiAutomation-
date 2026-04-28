@@ -11,15 +11,16 @@ import com.dataproviders.api.bean.UserBean;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 
-public class LoginAPIExcelDataDrivenTest {
+public class LoginAPIExcelPoijiDataDrivenTest {
 	
 
-	@Test(description = "Toverify FD user able to login via Excel  data",groups = {"api", "regression", "datadriven"}
+	@Test(description = "Toverify FD user able to login via Excel  Poiji data",groups = {"api", "regression", "datadriven"}
 			,dataProviderClass=com.dataproviders.DataProviderUtils.class,
-			dataProvider="loginAPIExcelDataProvider")//loginAPIDataProvider is method in DataProviderUtils.class
-	public void fdLoginAPITest(loginUserDetails loginDetails) {
+			dataProvider="loginAPIExcelPoijiDataProvider")//loginAPIDataProvider is method in DataProviderUtils.class
+	//public void fdLoginAPITest(loginUserDetails loginDetails) {----> Have touse UserBean rather loginDetails
+		public void fdLoginAPITest(UserBean userBean) {
 		given()
-		.spec(SpecUtils.requestSpec(loginDetails))//username and password -ConfigManager14 class
+		.spec(SpecUtils.requestSpec(userBean))//username and password -ConfigManager14 class
 		//.body(loginDetails)
 		.when()
 		.post("login") 
