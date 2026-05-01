@@ -7,19 +7,21 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.api.request.model.loginUserDetails;
+import com.dataproviders.api.bean.CreateJobBean;
 import com.dataproviders.api.bean.UserBean;
 import com.poiji.bind.Poiji;
 
-public class ExcelReaderUtilPoiji {
+public class ExcelReaderUtil2Poiji {
 	
-private ExcelReaderUtilPoiji() {}
-	public static Iterator<UserBean> loadExcelPoijiData() {
+private ExcelReaderUtil2Poiji() {}
+	public static  <T> Iterator<T> loadExcelPoijiData(String testDataPath, String sheetName, Class<T> clazz) {
 		InputStream is = Thread.currentThread().getContextClassLoader()
 				.getResourceAsStream("testData/PhoenixTestData.xlsx");
 		XSSFWorkbook myWorkBook = null;
@@ -28,9 +30,10 @@ private ExcelReaderUtilPoiji() {}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		XSSFSheet mySheet = myWorkBook.getSheet("LoginTestData");
-		List<UserBean> userList= Poiji.fromExcel(mySheet, UserBean.class);//Check in loacdCSV method, Userbean loaded rather loginAPICSVdata
-		return userList.iterator();
+		XSSFSheet mySheet = myWorkBook.getSheet(sheetName);
+		List<T> dataList= Poiji.fromExcel(mySheet, clazz);//Check in loacdCSV method, Userbean loaded rather loginAPICSVdata
+		return dataList.iterator();
 		
 }
+
 }

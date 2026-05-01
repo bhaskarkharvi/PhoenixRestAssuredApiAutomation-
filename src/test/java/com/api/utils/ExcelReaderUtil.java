@@ -17,7 +17,7 @@ import com.api.request.model.loginUserDetails;
 public class ExcelReaderUtil {
 	
 private ExcelReaderUtil() {}
-	public static Iterator<loginUserDetails> loadExcelData() {
+	public static Iterator<loginUserDetails> loadExcelData(String string, String string2, Class<loginUserDetails> clazz) {
 		InputStream is = Thread.currentThread().getContextClassLoader()
 				.getResourceAsStream("testData/PhoenixTestData.xlsx");
 		XSSFWorkbook myWorkBook = null;

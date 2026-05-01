@@ -19,7 +19,7 @@ public class CreateJobPayload {
 	private CustomerProduct customer_product;
 	private List<Problems> problems;
 	
-	CreateJobPayload(){}
+	public CreateJobPayload(){}
 	public CreateJobPayload(int mst_service_location_id, int mst_platform_id, int mst_warrenty_status_id,
 			int mst_oem_id, Customer customer, CustomerAddress customer_address, CustomerProduct customer_product,
 			List<Problems> problems) {
@@ -80,7 +80,7 @@ public class CreateJobPayload {
 	public List<Problems> getProblems() {
 		return problems;
 	}
-	public void setProblems(ArrayList<Problems> problems) {
+	public void setProblems(List<Problems> problems) {
 		this.problems = problems;
 	}
 	@Override

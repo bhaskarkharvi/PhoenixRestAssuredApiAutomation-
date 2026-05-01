@@ -12,7 +12,7 @@ import com.dataproviders.api.bean.CreateJobBean;
 
 public class CreateJobBeanMapper {
 	
-	private CreateJobBeanMapper() {};
+	private CreateJobBeanMapper() {}
 	
 	public static CreateJobPayload mapper(CreateJobBean bean ){//bean --> CreateJob payload object
 		
