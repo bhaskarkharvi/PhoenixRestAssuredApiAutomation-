@@ -15,7 +15,7 @@ public class CreateJobAPIExcelPoijiDataDrivenTest {
 	
 	//CreateJobPayload creatJobPayload;
 		
-	@Test(description ="To Verify create job able to create 'In warranty flow' successfully",
+	@Test(description ="To Verify create job able to create 'In warranty flow' successfully using poiji",
 			groups={"api","regression","datadriven"}
 	,dataProviderClass=com.dataproviders.DataProviderUtils.class
 			,dataProvider="createJobAPIExcelPojiDataProvider")

@@ -18,9 +18,9 @@ import com.dataproviders.api.bean.CreateJobBean;
 import com.dataproviders.api.bean.UserBean;
 import com.poiji.bind.Poiji;
 
-public class ExcelReaderUtil2Poiji {
+public class ExcelReaderUtilPoiji {
 	
-private ExcelReaderUtil2Poiji() {}
+private ExcelReaderUtilPoiji() {}
 	public static  <T> Iterator<T> loadExcelPoijiData(String testDataPath, String sheetName, Class<T> clazz) {
 		InputStream is = Thread.currentThread().getContextClassLoader()
 				.getResourceAsStream("testData/PhoenixTestData.xlsx");
