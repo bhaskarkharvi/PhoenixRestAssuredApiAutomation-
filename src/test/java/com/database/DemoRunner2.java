@@ -11,10 +11,10 @@ public class DemoRunner2 {
 		
 		long startTime=System.currentTimeMillis();
 		for(int i=0;i<1000;i++) {
-		DatabaseManager.createConnection();
-		DatabaseManager.createConnection();
-		DatabaseManager.createConnection();
-		DatabaseManager.createConnection();// multiple connection creates multiple memory allocation which is time consuming
+			
+			  DatabaseManagerOLD.createConnection(); DatabaseManagerOLD.createConnection();
+			  DatabaseManagerOLD.createConnection(); DatabaseManagerOLD.createConnection();
+			 // multiple connection creates multiple memory allocation which is time consuming
 		// SO in DBManager class Singleton pattern has to be created by declaring conn as static class variable
 	}
 		
