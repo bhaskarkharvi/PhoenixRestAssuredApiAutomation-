@@ -13,6 +13,7 @@
 			<class name="com.phoenix.api.tests.datadriven.LoginAPIExcelPoijiDataDrivenTest" />
 	
 				<class name="com.phoenix.api.tests.datadriven.CreateJobAPIExcelPoijiDataDrivenTest" />
+				<class name="com.phoenix.api.tests.datadriven.CreateJobApiDBdataDrivenTest" />
 		</classes>
 	</test>
 
