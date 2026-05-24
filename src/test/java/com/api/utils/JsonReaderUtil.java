@@ -14,24 +14,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonReaderUtil {
 
 	public static <T> Iterator<T> loadJSON(String fileName, Class<T[]> clazz) {
-		//file path name - "testData/demo.json"
+		// file path name - "testData/demo.json"
 		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
-		
+
 		ObjectMapper objectMapper = new ObjectMapper();
-	
+
 		T[] classArray;
 		List<T> loginList = null;
-		
+
 		try {
 			classArray = objectMapper.readValue(is, clazz);
-			loginList = Arrays.asList(classArray );
-			
+			loginList = Arrays.asList(classArray);
+
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 		}
-		
-	
-	return loginList.iterator();// Have to return this to DataProvider class, So return added.
-}
+
+		return loginList.iterator();// Have to return this to DataProvider class, So return added.
+	}
 }

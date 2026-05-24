@@ -9,6 +9,11 @@
 			<class name="com.phoenix.api.tests.datadriven.CreateJobAPIFakeDataDrivenTest" />
 			<class name="com.phoenix.api.tests.datadriven.LoginAPIJSONDataDrivenTest" />
 			<class name="com.phoenix.api.tests.datadriven.CreateJobAPIJsonDataDrivenTest" />
+			
+			<class name="com.phoenix.api.tests.datadriven.LoginAPIExcelPoijiDataDrivenTest" />
+	
+				<class name="com.phoenix.api.tests.datadriven.CreateJobAPIExcelPoijiDataDrivenTest" />
+				<class name="com.phoenix.api.tests.datadriven.CreateJobApiDBdataDrivenTest" />
 		</classes>
 	</test>
 
